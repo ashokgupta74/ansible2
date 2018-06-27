@@ -1,0 +1,139 @@
+---
+
+- name: ensure custom hostname set in hosts file
+  lineinfile:
+    dest: /etc/hosts
+    state: present
+    line: '127.0.0.1 {{ yumrepo_fqdn }}'
+
+- name: install epel release
+  package: name=epel-release state=latest
+  when: ansible_os_family == 'RedHat'
+
+  # install required base packages
+- name: Required base packages
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - wget
+    - psmisc
+    - python-pip 
+    - firewalld
+    - git
+    - tmux
+    - wget
+    - curl
+    - htop
+    - bzip2
+    - pbzip2
+
+- name: Install mlocate
+  package:
+    name: mlocate
+    state: present
+  notify: update_db
+
+- name: Required base packages (RedHat)
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present
+  with_items:
+    - vim-enhanced
+    - bind-utils
+  when: ansible_os_family == 'RedHat'
+
+- name: Required base packages (Ubuntu)
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present
+  with_items:
+    - vim
+    - dnsutils
+  when: ansible_os_family == 'Debian'
+
+- name: disable selinux
+  when: ansible_os_family == 'RedHat'
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Make sure we have a 'wheel' group
+  group:
+    name: wheel
+    state: present
+
+- name: Allow 'wheel' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+
+- user:
+    name: user
+    home: /home/user
+    createhome: yes
+    groups: wheel
+    append: yes
+    state: present
+
+- authorized_key:
+    user: user
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8QdHPv1S9NWitZ0AtHmmR2ZW84BMgV4XzOj5rLU0BVtTXEWk5JzeA544pWnrKRodncPof8G0sIdUR5cLdH+t6SzAJabQ9MlyNlQi69jJ3ZqtKv6Vhuc0YwenJSGR2NM+tAslQP/1RHZiEKWol3UAh11ghvRe1ufib0o4mkKTG+fdfBcGvP2t2nuuqQFrMwKQdho/Kypz2GMvJHFlgH8g/gr1jMj6yNKfpFdViEIcl2xTCeqpd5C7fKveHQxLZ+EclEVNmzSWpenpIO2ujRr2mr/uX01T9mBLHJ8ixCsO2LVC96fKvf0JWVhN2ZrC/Z65XGbAzDrKV9GPIFcGCbE+z student@training"
+
+- name: install python virtualenv
+  pip:
+    name: virtualenv
+
+- name: upgrade python-pip
+  pip:
+    name: pip
+    state: latest
+
+- name: Install Python Datadog API
+  become: yes
+  pip:
+    name: datadog
+
+- name: Install PyYAML
+  become: yes
+  pip:
+    name: pyyaml
+
+- name: Install AWS CLI
+  become: yes
+  pip:
+    name: awscli
+
+- name: ensure firewalld is running on RedHat
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+  when: ansible_os_family == 'RedHat'
+
+- name: Allow http through firewall (RedHat)
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled
+    immediate: true
+  when: ansible_os_family == 'RedHat'
+
+- name: Allow https through firewall (RedHat)
+  firewalld:
+    service: https
+    permanent: true
+    state: enabled
+    immediate: true
+  when: ansible_os_family == 'RedHat'
+
+- name: set timezone to Australia/Sydney
+  timezone:
+    name: Australia/Sydney
+
+- name: ensure our yum repository is installed
+  yum_repository:
+    name: customrepo
+    description: Our custom YUM repository containing successfully built artefacts from circleci
+    baseurl: http://{{ yumrepo_fqdn }}/
+    gpgcheck: no
+
