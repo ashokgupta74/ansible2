@@ -1,0 +1,7 @@
+---
+
+- name: ensure latest version of our app is deployed
+  package:
+    name: pingtest
+    state: latest
+

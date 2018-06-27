@@ -1,0 +1,48 @@
+---
+
+- name: install nginx config file
+  template:
+      src: yumrepo.conf
+      dest: /etc/nginx/conf.d/yumrepo.conf
+      mode: 0644
+  notify:
+    - reload nginx
+
+- name: create yumrepo dir
+  file: path={{ yumrepo_path }} state=directory
+
+- name: ensure createrepo is installed
+  package:
+      name: createrepo
+      state: present
+
+- name: ensure yumutils is installed
+  package:
+      name: yum-utils
+      state: present
+
+- name: get latest artefacts from circleci
+  shell: |
+    LATEST_BUILD=$(
+        curl -s "https://circleci.com/api/v1.1/project/github/{{ cci_username }}/{{ cci_project }}/tree/{{ cci_branch }}?circle-token={{ cci_token }}&filter=successful&filter=completed" 2>&1 |
+        grep build_num |
+        awk '{print $3}' |
+        sed 's/,//' |
+        sort -u |
+        tail -n1
+        )
+        # fetch artefact from latest successful build
+        ARTEFACTS=$(
+    curl -s https://circleci.com/api/v1.1/project/github/{{ cci_username }}/{{ cci_project }}/${LATEST_BUILD}/artifacts?circle-token={{ cci_token }} |
+        grep -o 'https://[^"]*'
+        )
+        for url in $ARTEFACTS; do
+    name=$(basename ${url})
+    wget -q ${url} -O {{ yumrepo_path }}/${name}
+    done
+
+- name: refresh yum repo
+  shell: |
+    rm -f $(repomanage --keep=2 --old {{ yumrepo_path }})
+    createrepo {{ yumrepo_path }}
+
