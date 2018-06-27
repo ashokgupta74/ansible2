@@ -1,0 +1,10 @@
+---
+
+yumrepo_fqdn: deployserver-george
+yumrepo_path: /opt/yumrepo
+
+cci_username: linuxdojo-training
+cci_token: 92dc1185d521273ca749a9416531b5f856e41399
+cci_project: pingtest
+cci_branch: master
+

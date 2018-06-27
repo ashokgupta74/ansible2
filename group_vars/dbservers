@@ -1,0 +1,17 @@
+---
+
+mysql_user_home: /root
+mysql_user_name: root
+mysql_user_password: supersecret
+mysql_root_password_update: no
+mysql_enabled_on_startup: yes
+mysql_port: "3306"
+mysql_bind_address: '0.0.0.0'
+mysql_databases:
+  - name: appdb
+mysql_users:
+  - name: user
+    host: "%"
+    password: supersecret
+    priv: "appdb.*:ALL"
+
