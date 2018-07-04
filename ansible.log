@@ -761,3 +761,398 @@ could not find expected ':'
 2018-07-04 02:35:09,191 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
 2018-07-04 02:35:09,192 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
 2018-07-04 02:35:10,022 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 504
+2018-07-04 02:50:07,173 p=14768 u=ashok |  PLAY [dbservers] *******************************************************************************************************************************************************************************************
+2018-07-04 02:50:07,177 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:07,179 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:08,014 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 343
+2018-07-04 02:50:08,034 p=14768 u=ashok |  TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+2018-07-04 02:50:09,218 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,224 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:09,264 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/variables.yml for deployserver-ashok
+2018-07-04 02:50:09,272 p=14768 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables.] **************************************************************************************************************************************************
+2018-07-04 02:50:09,289 p=14768 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables (RedHat).] *****************************************************************************************************************************************
+2018-07-04 02:50:09,353 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,359 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_packages.] **********************************************************************************************************************************************************
+2018-07-04 02:50:09,425 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,430 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_daemon.] ************************************************************************************************************************************************************
+2018-07-04 02:50:09,492 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,498 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_slow_query_log_file.] ***********************************************************************************************************************************************
+2018-07-04 02:50:09,560 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,566 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_log_error.] *********************************************************************************************************************************************************
+2018-07-04 02:50:09,627 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,633 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_syslog_tag.] ********************************************************************************************************************************************************
+2018-07-04 02:50:09,694 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,699 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_pid_file.] **********************************************************************************************************************************************************
+2018-07-04 02:50:09,761 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,766 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_file.] *******************************************************************************************************************************************************
+2018-07-04 02:50:09,827 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,833 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_include_dir.] ************************************************************************************************************************************************
+2018-07-04 02:50:09,892 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,898 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_socket.] ************************************************************************************************************************************************************
+2018-07-04 02:50:09,958 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:09,964 p=14768 u=ashok |  TASK [geerlingguy.mysql : Define mysql_supports_innodb_large_prefix.] **************************************************************************************************************************************
+2018-07-04 02:50:10,023 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:10,028 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:10,053 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/setup-RedHat.yml for deployserver-ashok
+2018-07-04 02:50:10,063 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL packages are installed.] ********************************************************************************************************************************************
+2018-07-04 02:50:10,810 p=14768 u=ashok |  ok: [deployserver-ashok] => (item=[u'mariadb', u'mariadb-server', u'mariadb-libs', u'MySQL-python', u'perl-DBD-MySQL'])
+2018-07-04 02:50:10,815 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL Python libraries are installed.] ************************************************************************************************************************************
+2018-07-04 02:50:11,355 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:11,360 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:11,379 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:11,386 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:11,400 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:11,405 p=14768 u=ashok |  TASK [geerlingguy.mysql : Check if MySQL packages were installed.] *****************************************************************************************************************************************
+2018-07-04 02:50:11,465 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:11,470 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:11,510 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/configure.yml for deployserver-ashok
+2018-07-04 02:50:11,524 p=14768 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf global MySQL configuration.] *****************************************************************************************************************************************
+2018-07-04 02:50:12,322 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:12,328 p=14768 u=ashok |  TASK [geerlingguy.mysql : Verify mysql include directory exists.] ******************************************************************************************************************************************
+2018-07-04 02:50:12,343 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:12,349 p=14768 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf override files into include directory.] ******************************************************************************************************************************
+2018-07-04 02:50:12,369 p=14768 u=ashok |  TASK [geerlingguy.mysql : Create slow query log file (if configured).] *************************************************************************************************************************************
+2018-07-04 02:50:12,381 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:12,387 p=14768 u=ashok |  TASK [geerlingguy.mysql : Create datadir if it does not exist] *********************************************************************************************************************************************
+2018-07-04 02:50:12,713 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:12,719 p=14768 u=ashok |  TASK [geerlingguy.mysql : Set ownership on slow query log file (if configured).] ***************************************************************************************************************************
+2018-07-04 02:50:12,730 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:12,736 p=14768 u=ashok |  TASK [geerlingguy.mysql : Create error log file (if configured).] ******************************************************************************************************************************************
+2018-07-04 02:50:13,185 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:13,191 p=14768 u=ashok |  TASK [geerlingguy.mysql : Set ownership on error log file (if configured).] ********************************************************************************************************************************
+2018-07-04 02:50:13,519 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:13,525 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL is started and enabled on boot.] ************************************************************************************************************************************
+2018-07-04 02:50:14,328 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:14,333 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:14,376 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/secure-installation.yml for deployserver-ashok
+2018-07-04 02:50:14,395 p=14768 u=ashok |  TASK [geerlingguy.mysql : Get MySQL version.] **************************************************************************************************************************************************************
+2018-07-04 02:50:14,923 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:14,928 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure default user is present.] *************************************************************************************************************************************************
+2018-07-04 02:50:14,942 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:14,948 p=14768 u=ashok |  TASK [geerlingguy.mysql : Copy user-my.cnf file with password credentials.] ********************************************************************************************************************************
+2018-07-04 02:50:14,961 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:14,967 p=14768 u=ashok |  TASK [geerlingguy.mysql : Disallow root login remotely] ****************************************************************************************************************************************************
+2018-07-04 02:50:15,326 p=14768 u=ashok |  ok: [deployserver-ashok] => (item=DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1'))
+2018-07-04 02:50:15,332 p=14768 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the root user.] ********************************************************************************************************************************************
+2018-07-04 02:50:15,348 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:15,353 p=14768 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (5.7.x).] ******************************************************************************************************************
+2018-07-04 02:50:15,373 p=14768 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (< 5.7.x).] ****************************************************************************************************************
+2018-07-04 02:50:15,394 p=14768 u=ashok |  TASK [geerlingguy.mysql : Copy .my.cnf file with root password credentials.] *******************************************************************************************************************************
+2018-07-04 02:50:15,440 p=14768 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 02:50:15,445 p=14768 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the anonymous user.] ***************************************************************************************************************************************
+2018-07-04 02:50:15,796 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:15,801 p=14768 u=ashok |  TASK [geerlingguy.mysql : Remove anonymous MySQL users.] ***************************************************************************************************************************************************
+2018-07-04 02:50:15,819 p=14768 u=ashok |  TASK [geerlingguy.mysql : Remove MySQL test database.] *****************************************************************************************************************************************************
+2018-07-04 02:50:16,261 p=14768 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 02:50:16,267 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:16,287 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/databases.yml for deployserver-ashok
+2018-07-04 02:50:16,313 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL databases are present.] *********************************************************************************************************************************************
+2018-07-04 02:50:16,647 p=14768 u=ashok |  ok: [deployserver-ashok] => (item={u'name': u'appdb'})
+2018-07-04 02:50:16,653 p=14768 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 02:50:16,676 p=14768 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/users.yml for deployserver-ashok
+2018-07-04 02:50:16,709 p=14768 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL users are present.] *************************************************************************************************************************************************
+2018-07-04 02:50:16,721 p=14768 u=ashok |  fatal: [deployserver-ashok]: FAILED! => {"failed": true, "msg": "Attempting to decrypt but no vault secrets found"}
+2018-07-04 02:50:16,722 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:16,723 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:17,554 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 396
+2018-07-04 02:50:17,557 p=14768 u=ashok |  PLAY RECAP *************************************************************************************************************************************************************************************************
+2018-07-04 02:50:17,558 p=14768 u=ashok |  deployserver-ashok         : ok=31   changed=0    unreachable=0    failed=1   
+2018-07-04 02:50:17,558 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:17,559 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:18,389 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:18,391 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:18,392 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:19,223 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:19,226 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:19,227 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:20,062 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:20,064 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:20,065 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:20,896 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:20,898 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:20,899 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:21,730 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:21,733 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:21,733 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:22,564 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 02:50:22,567 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 02:50:22,567 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 02:50:23,398 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 504
+2018-07-04 03:07:42,351 p=2359 u=ashok |  PLAY [appservers] ******************************************************************************************************************************************************************************************
+2018-07-04 03:07:42,356 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:42,357 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:43,193 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 346
+2018-07-04 03:07:43,211 p=2359 u=ashok |  TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+2018-07-04 03:07:44,407 p=2359 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:07:44,413 p=2359 u=ashok |  TASK [appserver : ensure latest version of our app is deployed] ********************************************************************************************************************************************
+2018-07-04 03:07:47,357 p=2359 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:07:47,359 p=2359 u=ashok |  PLAY RECAP *************************************************************************************************************************************************************************************************
+2018-07-04 03:07:47,359 p=2359 u=ashok |  deployserver-ashok         : ok=2    changed=0    unreachable=0    failed=0   
+2018-07-04 03:07:47,360 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:47,361 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:48,193 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:48,196 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:48,196 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:49,031 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:49,034 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:49,035 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:49,868 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:49,871 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:49,872 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:50,696 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:50,698 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:50,699 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:51,531 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:51,534 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:51,535 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:52,366 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:07:52,368 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:07:52,369 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:07:53,207 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 396
+2018-07-04 03:09:07,206 p=2922 u=ashok |  ERROR! the playbook: dbservers could not be found
+2018-07-04 03:09:11,652 p=2966 u=ashok |  PLAY [dbservers] *******************************************************************************************************************************************************************************************
+2018-07-04 03:09:11,657 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:11,658 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:12,507 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 343
+2018-07-04 03:09:12,527 p=2966 u=ashok |  TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+2018-07-04 03:09:13,706 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:13,711 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:13,752 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/variables.yml for deployserver-ashok
+2018-07-04 03:09:13,760 p=2966 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables.] **************************************************************************************************************************************************
+2018-07-04 03:09:13,777 p=2966 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables (RedHat).] *****************************************************************************************************************************************
+2018-07-04 03:09:13,840 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:13,846 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_packages.] **********************************************************************************************************************************************************
+2018-07-04 03:09:13,906 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:13,911 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_daemon.] ************************************************************************************************************************************************************
+2018-07-04 03:09:13,972 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:13,977 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_slow_query_log_file.] ***********************************************************************************************************************************************
+2018-07-04 03:09:14,038 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,044 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_log_error.] *********************************************************************************************************************************************************
+2018-07-04 03:09:14,103 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,109 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_syslog_tag.] ********************************************************************************************************************************************************
+2018-07-04 03:09:14,169 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,175 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_pid_file.] **********************************************************************************************************************************************************
+2018-07-04 03:09:14,234 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,240 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_file.] *******************************************************************************************************************************************************
+2018-07-04 03:09:14,299 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,305 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_include_dir.] ************************************************************************************************************************************************
+2018-07-04 03:09:14,365 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,370 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_socket.] ************************************************************************************************************************************************************
+2018-07-04 03:09:14,431 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,436 p=2966 u=ashok |  TASK [geerlingguy.mysql : Define mysql_supports_innodb_large_prefix.] **************************************************************************************************************************************
+2018-07-04 03:09:14,495 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:14,501 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:14,526 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/setup-RedHat.yml for deployserver-ashok
+2018-07-04 03:09:14,536 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL packages are installed.] ********************************************************************************************************************************************
+2018-07-04 03:09:15,272 p=2966 u=ashok |  ok: [deployserver-ashok] => (item=[u'mariadb', u'mariadb-server', u'mariadb-libs', u'MySQL-python', u'perl-DBD-MySQL'])
+2018-07-04 03:09:15,278 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL Python libraries are installed.] ************************************************************************************************************************************
+2018-07-04 03:09:15,815 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:15,820 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:15,834 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:15,839 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:15,851 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:15,857 p=2966 u=ashok |  TASK [geerlingguy.mysql : Check if MySQL packages were installed.] *****************************************************************************************************************************************
+2018-07-04 03:09:15,914 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:15,920 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:15,960 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/configure.yml for deployserver-ashok
+2018-07-04 03:09:15,973 p=2966 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf global MySQL configuration.] *****************************************************************************************************************************************
+2018-07-04 03:09:16,876 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:16,883 p=2966 u=ashok |  TASK [geerlingguy.mysql : Verify mysql include directory exists.] ******************************************************************************************************************************************
+2018-07-04 03:09:16,895 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:16,901 p=2966 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf override files into include directory.] ******************************************************************************************************************************
+2018-07-04 03:09:16,916 p=2966 u=ashok |  TASK [geerlingguy.mysql : Create slow query log file (if configured).] *************************************************************************************************************************************
+2018-07-04 03:09:16,928 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:16,933 p=2966 u=ashok |  TASK [geerlingguy.mysql : Create datadir if it does not exist] *********************************************************************************************************************************************
+2018-07-04 03:09:17,252 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:17,257 p=2966 u=ashok |  TASK [geerlingguy.mysql : Set ownership on slow query log file (if configured).] ***************************************************************************************************************************
+2018-07-04 03:09:17,267 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:17,273 p=2966 u=ashok |  TASK [geerlingguy.mysql : Create error log file (if configured).] ******************************************************************************************************************************************
+2018-07-04 03:09:17,715 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:17,721 p=2966 u=ashok |  TASK [geerlingguy.mysql : Set ownership on error log file (if configured).] ********************************************************************************************************************************
+2018-07-04 03:09:18,043 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:18,049 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL is started and enabled on boot.] ************************************************************************************************************************************
+2018-07-04 03:09:18,880 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:18,886 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:18,929 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/secure-installation.yml for deployserver-ashok
+2018-07-04 03:09:18,948 p=2966 u=ashok |  TASK [geerlingguy.mysql : Get MySQL version.] **************************************************************************************************************************************************************
+2018-07-04 03:09:19,300 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:19,306 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure default user is present.] *************************************************************************************************************************************************
+2018-07-04 03:09:19,319 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:19,325 p=2966 u=ashok |  TASK [geerlingguy.mysql : Copy user-my.cnf file with password credentials.] ********************************************************************************************************************************
+2018-07-04 03:09:19,338 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:19,344 p=2966 u=ashok |  TASK [geerlingguy.mysql : Disallow root login remotely] ****************************************************************************************************************************************************
+2018-07-04 03:09:19,713 p=2966 u=ashok |  ok: [deployserver-ashok] => (item=DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1'))
+2018-07-04 03:09:19,718 p=2966 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the root user.] ********************************************************************************************************************************************
+2018-07-04 03:09:19,732 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:19,737 p=2966 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (5.7.x).] ******************************************************************************************************************
+2018-07-04 03:09:19,755 p=2966 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (< 5.7.x).] ****************************************************************************************************************
+2018-07-04 03:09:19,772 p=2966 u=ashok |  TASK [geerlingguy.mysql : Copy .my.cnf file with root password credentials.] *******************************************************************************************************************************
+2018-07-04 03:09:19,788 p=2966 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 03:09:19,794 p=2966 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the anonymous user.] ***************************************************************************************************************************************
+2018-07-04 03:09:20,150 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:20,155 p=2966 u=ashok |  TASK [geerlingguy.mysql : Remove anonymous MySQL users.] ***************************************************************************************************************************************************
+2018-07-04 03:09:20,173 p=2966 u=ashok |  TASK [geerlingguy.mysql : Remove MySQL test database.] *****************************************************************************************************************************************************
+2018-07-04 03:09:20,605 p=2966 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 03:09:20,611 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:20,630 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/databases.yml for deployserver-ashok
+2018-07-04 03:09:20,656 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL databases are present.] *********************************************************************************************************************************************
+2018-07-04 03:09:21,001 p=2966 u=ashok |  ok: [deployserver-ashok] => (item={u'name': u'appdb'})
+2018-07-04 03:09:21,007 p=2966 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 03:09:21,027 p=2966 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/users.yml for deployserver-ashok
+2018-07-04 03:09:21,061 p=2966 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL users are present.] *************************************************************************************************************************************************
+2018-07-04 03:09:21,074 p=2966 u=ashok |  fatal: [deployserver-ashok]: FAILED! => {"failed": true, "msg": "Attempting to decrypt but no vault secrets found"}
+2018-07-04 03:09:21,074 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:21,076 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:21,909 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 396
+2018-07-04 03:09:21,912 p=2966 u=ashok |  PLAY RECAP *************************************************************************************************************************************************************************************************
+2018-07-04 03:09:21,912 p=2966 u=ashok |  deployserver-ashok         : ok=31   changed=0    unreachable=0    failed=1   
+2018-07-04 03:09:21,912 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:21,913 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:22,737 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:22,740 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:22,740 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:23,571 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:23,574 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:23,575 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:24,396 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:24,399 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:24,400 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:25,231 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:25,233 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:25,234 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:26,057 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:26,060 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:26,060 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:26,892 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 03:09:26,894 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 03:09:26,895 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 03:09:27,726 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 504
+2018-07-04 04:21:05,004 p=31917 u=ashok |  PLAY [dbservers] *******************************************************************************************************************************************************************************************
+2018-07-04 04:21:05,009 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:05,010 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:05,848 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 343
+2018-07-04 04:21:05,868 p=31917 u=ashok |  TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+2018-07-04 04:21:06,965 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:06,971 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:07,011 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/variables.yml for deployserver-ashok
+2018-07-04 04:21:07,020 p=31917 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables.] **************************************************************************************************************************************************
+2018-07-04 04:21:07,037 p=31917 u=ashok |  TASK [geerlingguy.mysql : Include OS-specific variables (RedHat).] *****************************************************************************************************************************************
+2018-07-04 04:21:07,102 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,108 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_packages.] **********************************************************************************************************************************************************
+2018-07-04 04:21:07,172 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,177 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_daemon.] ************************************************************************************************************************************************************
+2018-07-04 04:21:07,240 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,245 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_slow_query_log_file.] ***********************************************************************************************************************************************
+2018-07-04 04:21:07,310 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,315 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_log_error.] *********************************************************************************************************************************************************
+2018-07-04 04:21:07,379 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,384 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_syslog_tag.] ********************************************************************************************************************************************************
+2018-07-04 04:21:07,448 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,453 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_pid_file.] **********************************************************************************************************************************************************
+2018-07-04 04:21:07,516 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,522 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_file.] *******************************************************************************************************************************************************
+2018-07-04 04:21:07,584 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,590 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_config_include_dir.] ************************************************************************************************************************************************
+2018-07-04 04:21:07,651 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,657 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_socket.] ************************************************************************************************************************************************************
+2018-07-04 04:21:07,719 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,725 p=31917 u=ashok |  TASK [geerlingguy.mysql : Define mysql_supports_innodb_large_prefix.] **************************************************************************************************************************************
+2018-07-04 04:21:07,787 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:07,792 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:07,819 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/setup-RedHat.yml for deployserver-ashok
+2018-07-04 04:21:07,830 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL packages are installed.] ********************************************************************************************************************************************
+2018-07-04 04:21:08,583 p=31917 u=ashok |  ok: [deployserver-ashok] => (item=[u'mariadb', u'mariadb-server', u'mariadb-libs', u'MySQL-python', u'perl-DBD-MySQL'])
+2018-07-04 04:21:08,589 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL Python libraries are installed.] ************************************************************************************************************************************
+2018-07-04 04:21:09,127 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:09,134 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:09,147 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:09,152 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:09,166 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:09,172 p=31917 u=ashok |  TASK [geerlingguy.mysql : Check if MySQL packages were installed.] *****************************************************************************************************************************************
+2018-07-04 04:21:09,234 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:09,239 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:09,281 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/configure.yml for deployserver-ashok
+2018-07-04 04:21:09,295 p=31917 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf global MySQL configuration.] *****************************************************************************************************************************************
+2018-07-04 04:21:10,093 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:10,099 p=31917 u=ashok |  TASK [geerlingguy.mysql : Verify mysql include directory exists.] ******************************************************************************************************************************************
+2018-07-04 04:21:10,112 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:10,118 p=31917 u=ashok |  TASK [geerlingguy.mysql : Copy my.cnf override files into include directory.] ******************************************************************************************************************************
+2018-07-04 04:21:10,135 p=31917 u=ashok |  TASK [geerlingguy.mysql : Create slow query log file (if configured).] *************************************************************************************************************************************
+2018-07-04 04:21:10,145 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:10,150 p=31917 u=ashok |  TASK [geerlingguy.mysql : Create datadir if it does not exist] *********************************************************************************************************************************************
+2018-07-04 04:21:10,479 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:10,485 p=31917 u=ashok |  TASK [geerlingguy.mysql : Set ownership on slow query log file (if configured).] ***************************************************************************************************************************
+2018-07-04 04:21:10,496 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:10,502 p=31917 u=ashok |  TASK [geerlingguy.mysql : Create error log file (if configured).] ******************************************************************************************************************************************
+2018-07-04 04:21:10,955 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:10,960 p=31917 u=ashok |  TASK [geerlingguy.mysql : Set ownership on error log file (if configured).] ********************************************************************************************************************************
+2018-07-04 04:21:11,289 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:11,295 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL is started and enabled on boot.] ************************************************************************************************************************************
+2018-07-04 04:21:12,098 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:12,104 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:12,147 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/secure-installation.yml for deployserver-ashok
+2018-07-04 04:21:12,171 p=31917 u=ashok |  TASK [geerlingguy.mysql : Get MySQL version.] **************************************************************************************************************************************************************
+2018-07-04 04:21:12,530 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:12,536 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure default user is present.] *************************************************************************************************************************************************
+2018-07-04 04:21:12,552 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:12,558 p=31917 u=ashok |  TASK [geerlingguy.mysql : Copy user-my.cnf file with password credentials.] ********************************************************************************************************************************
+2018-07-04 04:21:12,571 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:12,577 p=31917 u=ashok |  TASK [geerlingguy.mysql : Disallow root login remotely] ****************************************************************************************************************************************************
+2018-07-04 04:21:12,941 p=31917 u=ashok |  ok: [deployserver-ashok] => (item=DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1'))
+2018-07-04 04:21:12,946 p=31917 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the root user.] ********************************************************************************************************************************************
+2018-07-04 04:21:12,960 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:12,965 p=31917 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (5.7.x).] ******************************************************************************************************************
+2018-07-04 04:21:12,983 p=31917 u=ashok |  TASK [geerlingguy.mysql : Update MySQL root password for localhost root account (< 5.7.x).] ****************************************************************************************************************
+2018-07-04 04:21:13,000 p=31917 u=ashok |  TASK [geerlingguy.mysql : Copy .my.cnf file with root password credentials.] *******************************************************************************************************************************
+2018-07-04 04:21:13,014 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:13,019 p=31917 u=ashok |  TASK [geerlingguy.mysql : Get list of hosts for the anonymous user.] ***************************************************************************************************************************************
+2018-07-04 04:21:13,376 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:13,382 p=31917 u=ashok |  TASK [geerlingguy.mysql : Remove anonymous MySQL users.] ***************************************************************************************************************************************************
+2018-07-04 04:21:13,435 p=31917 u=ashok |  TASK [geerlingguy.mysql : Remove MySQL test database.] *****************************************************************************************************************************************************
+2018-07-04 04:21:13,926 p=31917 u=ashok |  ok: [deployserver-ashok]
+2018-07-04 04:21:13,932 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:13,951 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/databases.yml for deployserver-ashok
+2018-07-04 04:21:13,977 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL databases are present.] *********************************************************************************************************************************************
+2018-07-04 04:21:14,318 p=31917 u=ashok |  ok: [deployserver-ashok] => (item={u'name': u'appdb'})
+2018-07-04 04:21:14,324 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:14,345 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/users.yml for deployserver-ashok
+2018-07-04 04:21:14,379 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure MySQL users are present.] *************************************************************************************************************************************************
+2018-07-04 04:21:14,878 p=31917 u=ashok |  changed: [deployserver-ashok] => (item=(censored due to no_log))
+2018-07-04 04:21:14,879 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:14,880 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:15,704 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 365
+2018-07-04 04:21:15,711 p=31917 u=ashok |  TASK [geerlingguy.mysql : include_tasks] *******************************************************************************************************************************************************************
+2018-07-04 04:21:15,742 p=31917 u=ashok |  included: /home/ashok/development/ansible2/roles/geerlingguy.mysql/tasks/replication.yml for deployserver-ashok
+2018-07-04 04:21:15,785 p=31917 u=ashok |  TASK [geerlingguy.mysql : Ensure replication user exists on master.] ***************************************************************************************************************************************
+2018-07-04 04:21:15,800 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:15,805 p=31917 u=ashok |  TASK [geerlingguy.mysql : Check slave replication status.] *************************************************************************************************************************************************
+2018-07-04 04:21:15,823 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:15,832 p=31917 u=ashok |  TASK [geerlingguy.mysql : Check master replication status.] ************************************************************************************************************************************************
+2018-07-04 04:21:15,856 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:15,861 p=31917 u=ashok |  TASK [geerlingguy.mysql : Configure replication on the slave.] *********************************************************************************************************************************************
+2018-07-04 04:21:15,878 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:15,883 p=31917 u=ashok |  TASK [geerlingguy.mysql : Start replication.] **************************************************************************************************************************************************************
+2018-07-04 04:21:15,899 p=31917 u=ashok |  skipping: [deployserver-ashok]
+2018-07-04 04:21:15,901 p=31917 u=ashok |  PLAY RECAP *************************************************************************************************************************************************************************************************
+2018-07-04 04:21:15,901 p=31917 u=ashok |  deployserver-ashok         : ok=33   changed=1    unreachable=0    failed=0   
+2018-07-04 04:21:15,902 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:15,903 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:16,740 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:16,742 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:16,743 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:17,560 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:17,562 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:17,563 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:18,394 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:18,397 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:18,398 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:19,216 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:19,219 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:19,219 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:20,042 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:20,045 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:20,046 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:20,924 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/series?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 16
+2018-07-04 04:21:20,927 urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2018-07-04 04:21:20,927 urllib3.connectionpool Starting new HTTPS connection (1): app.datadoghq.com
+2018-07-04 04:21:21,769 urllib3.connectionpool https://app.datadoghq.com:443 "POST /api/v1/events?api_key=ee678143fa7f46b59d470fc3bb879aa6 HTTP/1.1" 202 394
