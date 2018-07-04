@@ -1,0 +1,7 @@
+---
+- hosts: yumrepos
+  become: True
+
+  roles:
+    - role: hxpro.nginx
+    - role: yumrepo

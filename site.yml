@@ -1,0 +1,12 @@
+---
+- include: yumrepos.yml
+
+- hosts: all
+  become: True
+  roles:
+    - base
+    - Datadog.datadog
+
+- include: dbservers.yml
+- include: appservers.yml
+

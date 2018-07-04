@@ -1,6 +1,6 @@
 ---
 
-yumrepo_fqdn: deployserver-george
+yumrepo_fqdn: deployserver-ashok
 yumrepo_path: /opt/yumrepo
 
 cci_username: linuxdojo-training

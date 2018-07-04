@@ -16,6 +16,11 @@
       name: createrepo
       state: present
 
+- name: ensure wget is installed
+  package:
+      name: wget
+      state: present
+
 - name: ensure yumutils is installed
   package:
       name: yum-utils

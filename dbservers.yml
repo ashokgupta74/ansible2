@@ -1,0 +1,8 @@
+---
+- hosts: dbservers
+  become: True
+
+  roles:
+    - role: geerlingguy.mysql
+      become: yes
+
