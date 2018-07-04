@@ -1,0 +1,21 @@
+{{ ansible_managed | comment() }}
+
+server {
+    listen       80 default_server;
+{% if nginx_ipv6 %}
+    listen       [::]:80 default_server;
+{% endif %}
+    server_name  _;
+    root         {{ nginx_default_root }};
+    index        index.html index.htm;
+
+{% if le_payload_root is defined %}
+    include /etc/nginx/acme_snippet.conf;
+
+{% endif %}
+    # Load configuration files for the default server block.
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+    }
+}

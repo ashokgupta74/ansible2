@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ansible-playbook --private-key=${HOME}/.ssh/id_rsa-aws -i hosts $@
+

@@ -1,0 +1,46 @@
+---
+- name: Check IPv6
+  assert:
+    that:
+      - (ansible_all_ipv6_addresses is defined and ansible_all_ipv6_addresses|length>0)
+      - nginx_server_tokens in ['on', 'off', 'build']
+    msg: "Check your ipv6 configuration"
+  when: nginx_ipv6
+
+- name: Install nginx
+  package: name=nginx state=latest
+
+- name: Nginx config
+  template:
+    src=nginx.conf.j2
+    dest=/etc/nginx/nginx.conf
+  notify: reload nginx
+
+- name: Nginx default config
+  template:
+    src=default.conf.j2
+    dest=/etc/nginx/conf.d/default.conf
+  when: nginx_default_conf
+  notify: reload nginx
+
+- name: LE payload root folder
+  file:
+    dest: "{{ le_payload_root }}"
+    state: directory
+  when: le_payload_root is defined
+
+- name: Acme snippet
+  template:
+    src=acme_snippet.j2
+    dest=/etc/nginx/acme_snippet.conf
+  when: le_payload_root is defined
+  notify: reload nginx
+  register: nginx_acme_snippet
+
+- file:
+    path: "{{ item }}"
+    state: file
+  with_items: "{{ nginx_modules }}"
+
+- name: Start/enable nginx service
+  service: name=nginx enabled=yes state=started  
